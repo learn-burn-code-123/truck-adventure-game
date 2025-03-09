@@ -227,6 +227,7 @@ class TruckGame {
         this.isGameOver = false;
         document.getElementById('gameOver').classList.add('hidden');
         this.setupGame();
+        this.gameLoop();  // Restart the game loop
     }
 
     gameOver() {
