@@ -59,6 +59,8 @@ class TruckGame {
         // Menu buttons
         document.getElementById('startBtn').addEventListener('click', () => this.startGame());
         document.getElementById('playAgainBtn').addEventListener('click', () => this.resetGame());
+        document.getElementById('helpBtn').addEventListener('click', () => this.showHelp());
+        document.getElementById('closeHelpBtn').addEventListener('click', () => this.hideHelp());
     }
 
     createStars() {
@@ -247,6 +249,16 @@ class TruckGame {
         gain.gain.value = 0.1;
         oscillator.start();
         setTimeout(() => oscillator.stop(), 100);
+    }
+
+    showHelp() {
+        document.getElementById('helpDialog').classList.remove('hidden');
+        document.getElementById('menu').classList.add('hidden');
+    }
+
+    hideHelp() {
+        document.getElementById('helpDialog').classList.add('hidden');
+        document.getElementById('menu').classList.remove('hidden');
     }
 }
 
